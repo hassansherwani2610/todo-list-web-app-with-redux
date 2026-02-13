@@ -199,7 +199,3 @@ This project demonstrates:
 
 Hassan Sherwani\
 Frontend Developer \| React \| Redux Toolkit \| JavaScript
-
-------------------------------------------------------------------------
-
-Generated on: 2026-02-13
