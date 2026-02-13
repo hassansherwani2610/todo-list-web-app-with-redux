@@ -1,48 +1,79 @@
-# Todo List Web App
+# Todo List Web App (React + Redux Toolkit)
 
-A modern, responsive Todo List Web Application built with React for
-efficient task management and productivity tracking.
+A scalable and modern Todo List Web Application built using React and
+Redux Toolkit for structured state management and maintainable
+architecture.
 
 ------------------------------------------------------------------------
 
 ## 📌 Overview
 
-The Todo List Web App is a lightweight and user-friendly task management
-application developed using modern React architecture.
+This project is a production-structured frontend application
+demonstrating:
 
-This project demonstrates:
+-   Component-based architecture using React
+-   Centralized state management with Redux Toolkit
+-   Predictable data flow using Redux store
+-   Clean folder organization
+-   Scalable project structure
+-   Modern development best practices
 
--   Component-based architecture
--   State management using React Hooks
--   Clean UI/UX design principles
--   Scalable folder structure
--   Efficient rendering and state updates
+The application allows users to manage daily tasks efficiently with
+real-time UI updates and a responsive interface.
 
 ------------------------------------------------------------------------
 
-## 🚀 Features
+## 🚀 Core Features
 
 -   Add new tasks
--   Edit existing tasks
+-   Edit tasks
 -   Delete tasks
 -   Mark tasks as completed
+-   Centralized global state using Redux Toolkit
 -   Real-time UI updates
--   Responsive design (mobile + desktop)
--   Clean and minimal interface
+-   Clean and responsive layout
 
 ------------------------------------------------------------------------
 
 ## 🛠 Tech Stack
 
 -   React (Functional Components)
+-   Redux Toolkit
+-   React-Redux
 -   JavaScript (ES6+)
--   React Hooks (useState, useEffect)
 -   CSS Styling
 -   Node.js (Development Environment)
 
 ------------------------------------------------------------------------
 
-## 📂 Project Structure
+## 🧠 State Management Architecture
+
+This project uses Redux Toolkit for structured and scalable state
+management.
+
+### Redux Flow:
+
+UI Component\
+↓ dispatch(action)\
+Redux Slice\
+↓\
+Redux Store\
+↓\
+UI Re-render
+
+### Key Redux Concepts Used:
+
+-   configureStore()
+-   createSlice()
+-   useSelector()
+-   useDispatch()
+
+Redux Toolkit simplifies boilerplate and ensures predictable state
+updates.
+
+------------------------------------------------------------------------
+
+## 📂 Detailed Project Structure
 
     todo-list-web-app-with-react/
     │
@@ -51,31 +82,46 @@ This project demonstrates:
     │   └── favicon.ico
     │
     ├── src/
+    │   │
+    │   ├── app/
+    │   │   └── store.js
+    │   │       → Configures Redux store using configureStore()
+    │   │
+    │   ├── features/
+    │   │   └── todos/
+    │   │       ├── todosSlice.js
+    │   │       │   → Contains Redux slice (state, reducers, actions)
+    │   │       │
+    │   │       └── selectors.js (if applicable)
+    │   │           → Centralized selectors for accessing state
+    │   │
     │   ├── components/
     │   │   ├── TodoForm.jsx
+    │   │   │   → Dispatches addTodo action
+    │   │   │
     │   │   ├── TodoItem.jsx
+    │   │   │   → Dispatches update/delete/toggle actions
+    │   │   │
     │   │   ├── TodoList.jsx
+    │   │   │   → Reads tasks using useSelector()
+    │   │   │
     │   │   └── Header.jsx
     │   │
     │   ├── App.jsx
+    │   │   → Root component wrapping app with Redux Provider
+    │   │
     │   ├── main.jsx / index.js
+    │   │   → Entry point, integrates Redux store with Provider
+    │   │
     │   ├── styles/
+    │   │   → Styling files
+    │   │
     │   └── assets/
+    │       → Static resources
     │
     ├── package.json
-    ├── vite.config.js (if applicable)
+    ├── vite.config.js (if Vite)
     └── README.md
-
-------------------------------------------------------------------------
-
-## 🧠 Architecture
-
-The application follows a top-down data flow pattern:
-
-App (State Owner) ↓ TodoList ↓ TodoItem
-
-State is managed using React Hooks ensuring predictable UI updates and
-maintainable code.
 
 ------------------------------------------------------------------------
 
@@ -94,13 +140,13 @@ cd todo-list-web-app-with-react
 npm install
 ```
 
-### 3️⃣ Start Development Server
+### 3️⃣ Run Development Server
 
 ``` bash
 npm run dev
 ```
 
-or (if using Create React App)
+or
 
 ``` bash
 npm start
@@ -114,39 +160,45 @@ npm run build
 
 ------------------------------------------------------------------------
 
-## 📱 Responsiveness
+## 📈 Scalability & Best Practices
 
-The application is optimized for:
-
--   Desktop
--   Tablet
--   Mobile devices
-
-------------------------------------------------------------------------
-
-## 📈 Future Enhancements
-
--   LocalStorage persistence
--   Drag & Drop sorting
--   Task categories & tags
--   Due dates
--   Dark mode
--   Backend integration
--   Authentication system
+-   Feature-based folder structure
+-   Redux slice separation
+-   Centralized store configuration
+-   Reusable components
+-   Predictable state transitions
+-   Clean action handling
+-   Maintainable and extendable architecture
 
 ------------------------------------------------------------------------
 
-## 🎯 Purpose
+## 🔮 Possible Future Improvements
 
-This project demonstrates strong React fundamentals, clean component
-structure, and scalable frontend architecture.
+-   Persist state using localStorage or redux-persist
+-   Add async operations using createAsyncThunk()
+-   Add filtering & sorting
+-   Implement authentication
+-   Connect to backend API
+-   Add unit testing (Jest + React Testing Library)
+
+------------------------------------------------------------------------
+
+## 🎯 Project Purpose
+
+This project demonstrates:
+
+-   Strong understanding of React fundamentals
+-   Practical implementation of Redux Toolkit
+-   Clean and scalable frontend architecture
+-   Real-world state management approach
+-   Production-ready folder structure
 
 ------------------------------------------------------------------------
 
 ## 👨‍💻 Author
 
 Hassan Sherwani\
-Frontend Developer \| React \| JavaScript
+Frontend Developer \| React \| Redux Toolkit \| JavaScript
 
 ------------------------------------------------------------------------
 
